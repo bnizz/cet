@@ -1,0 +1,15 @@
+## Interface: 11200
+## Title: Chat Event Trigger (CET)
+## Notes: Configurable chat event triggers with real-time translation via Google Translate API
+## Version: 1.0.0
+## Author: CET Development Team
+## SavedVariables: CETSaved
+
+# Core addon files - Load order is important
+CETDefaults.lua
+CETVars.lua
+CET.lua
+
+# UI files - Load Lua before XML so functions are available
+CETUI.lua
+CETUI.xml
