@@ -5,6 +5,7 @@ A unified World of Warcraft 1.12.1 addon that provides real-time translation of 
 # Slop alert
 
 This slop alert entry is pretty much the only thing I've 100% written in this entire solution. This project has relied heavily on help from AI as I am not as good a developer as I would like to be.
+I'm really not even sure if the stuff in this readme or the project overview is in any way accurate - it might be a lot of bluster and hallucination. Or just best intentions that never actually got implemented.
 
 The upload was limited to what was needed to make the thing run and I also provided the dll source.
 Besides adding the addon files to CET directory in your addons folder, and the CET.dll to your root WoW folder, you probably also need to update your dlls.txt file adding CET.dll, aand you might also need to tag the dll in turtle wow launcher. You also need to create a Google Translate API key in order to make translations work.
@@ -253,4 +254,5 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
