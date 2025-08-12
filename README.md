@@ -11,6 +11,8 @@ The upload was limited to what was needed to make the thing run and I also provi
 Besides adding the addon files to CET directory in your addons folder, and the CET.dll to your root WoW folder, you probably also need to update your dlls.txt file adding CET.dll, aand you might also need to tag the dll in turtle wow launcher. You also need to create a Google Translate API key in order to make translations work.
 
 If this doesn't work for you sorry - I hope to improve it, but I usually don't have a lot of free time. Feel free to fork it and make it better. 
+I added some additional AI slop which aims to help with deploying the addon and also setting up the translate API key.
+These 2 sections (Google Cloud Translation API Setup & Deployment Guide) should be all you need to actually use the solution.
 
 Onwards with the rest of the README slop.
 
@@ -38,7 +40,135 @@ CET combines three key components into a single, production-ready solution:
 - ✅ Robust error handling and logging
 - ✅ SavedVariables for persistent configuration
 
+## 🌐 Google Cloud Translation API Setup
+
+### 💰 Pricing & Quotas Information
+
+Before setting up the Google Cloud Translation API, please review the pricing and quota information to understand potential costs:
+
+- **📋 Pricing Details**: [Google Cloud Translation Basic Pricing](https://cloud.google.com/translate/pricing#basic-pricing)
+- **📊 Usage Quotas**: [Google Cloud Translation Quotas](https://cloud.google.com/translate/quotas)
+
+> ⚠️ **Important**: You may be prompted to setup payment information during this process. If you're concerned about being billed beyond the free tier, implementing usage quotas is strongly advised.
+
+### 🚀 Setup Instructions
+
+#### Step 1: Create or Select a Project
+
+1. Visit the [Google Cloud Console Project Selector](https://console.cloud.google.com/projectselector2)
+2. Choose one of the following options:
+   - **Create a new project**: Click **"Create Project"**
+   - **Use existing project**: Select an existing project if that makes more sense for your use case
+
+#### Step 2: Generate API Credentials
+
+1. **Navigate to APIs & Services**:
+   - Click the navigation menu (hamburger icon) in the top left corner
+   - Select **"APIs & Services"**
+   - Click on **"Credentials"** at the top of the page
+
+2. **Create API Key**:
+   - Click the **"Create Credentials"** dropdown
+   - Select **"API Key"**
+
+### 🔒 Security Best Practices
+
+> 🛡️ **Critical Security Note**: Keep your API key safe and secure! Anyone with access to this key would be able to use your Google Cloud account and potentially incur charges.
+
+#### Recommended Security Measures:
+- Store your API key in environment variables
+- Never commit API keys to version control
+- Restrict API key usage to specific APIs and services
+- Regularly rotate your API keys
+- Monitor your usage in the Google Cloud Console
+
+### 📈 Monitoring Usage
+
+To avoid unexpected charges:
+- Set up billing alerts in your Google Cloud Console
+- Implement usage quotas for the Translation API
+- Regularly monitor your API usage and costs
+- Consider implementing rate limiting in your application
+
+---
+
+*Need help? Check the [Google Cloud Translation API documentation](https://cloud.google.com/translate/docs) for additional guidance.*
+
+## 🐢 Deployment Guide
+
+### Prerequisites
+- Turtle WoW client installed and working
+- Administrative access to modify game files
+
+### 📥 Deployment Steps
+
+#### 1. Download the Release
+- Navigate to the [releases page](https://github.com/bnizz/cet/releases/tag/alpha)
+- Download the latest ZIP file from the releases section
+
+#### 2. Extract Files
+- Unzip the downloaded file to a temporary location
+- You should see a `CET` folder and `CET.dll` file
+
+#### 3. Install Addon
+```
+📁 TurtleWoW/
+├── 📁 Interface/
+│   └── 📁 AddOns/
+│       └── 📁 CET/          ← Copy this folder here
+└── CET.dll                  ← Copy this file here
+```
+
+**Steps:**
+- Copy the `CET` folder into your `TurtleWoW/Interface/AddOns/` directory
+- Copy the `CET.dll` file into your main `TurtleWoW/` directory
+
+#### 4. Configure DLL Loading
+- Open `dlls.txt` file in your TurtleWoW directory
+- Add the following line: `CET.dll`
+- Save the file
+
+#### 5. Enable in Launcher (Optional)
+Some users may need to:
+- Open the Turtle WoW launcher
+- Navigate to the **MODS** tab
+- Enable the CET DLL
+- Click **Apply**
+
+### ✅ Verification
+
+After installation, launch Turtle WoW and verify that:
+- The game starts without errors
+- CET functionality is available in-game
+- No DLL loading errors appear
+
+### 🔧 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Game won't start | Check that `CET.dll` is in the correct directory and listed in `dlls.txt` |
+| Addon not loading | Verify the `CET` folder is in `Interface/AddOns/` |
+| DLL errors | Try enabling the DLL in the launcher's MODS tab |
+
+### 📂 File Structure
+After successful installation, your directory should look like:
+```
+TurtleWoW/
+├── CET.dll
+├── dlls.txt (containing "CET.dll")
+└── Interface/
+    └── AddOns/
+        └── CET/
+            └── [addon files]
+```
+
+---
+
+> ⚠️ **Important**: Always backup your game files before installing any modifications.
+
+
 ## Installation
+This section is more aimed at compilation from source. You can use the deployment section if you just want to use the solution.
 
 ### Prerequisites
 1. World of Warcraft 1.12.1 (Vanilla Classic)
@@ -254,5 +384,6 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
