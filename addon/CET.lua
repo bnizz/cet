@@ -186,31 +186,64 @@ function CET.InitializeTranslator()
     end
 end
 
--- Simple language detection based on character patterns
+-- Simple language detection based on character patterns (ignores punctuation/symbols)
 local function DetectLanguage(text)
     if not text or text == "" then
         return nil
     end
-    
-    -- Count Chinese characters (CJK range)
-    local chineseCount = 0
-    local totalChars = string.len(text)
-    
-    -- Simple heuristic: if more than 30% of characters are in CJK range, likely Chinese
-    for i = 1, totalChars do
-        local byte = string.byte(text, i)
-        -- UTF-8 encoded Chinese characters typically start with bytes in this range
-        if byte and byte >= 228 and byte <= 233 then
-            chineseCount = chineseCount + 1
+
+    local chineseChars = 0
+    local latinChars = 0
+
+    local i = 1
+    local totalBytes = string.len(text)
+    while i <= totalBytes do
+        local b1 = string.byte(text, i)
+        if not b1 then break end
+
+        if b1 >= 224 and b1 <= 239 then
+            -- Attempt to identify 3-byte UTF-8 sequences
+            local b2 = string.byte(text, i + 1)
+            local b3 = string.byte(text, i + 2)
+            -- Count as a Chinese character only for CJK Unified Ideographs range
+            -- U+4E00..U+9FFF roughly maps to UTF-8 starting bytes 0xE4..0xE9
+            if b2 and b3 then
+                if (b1 == 228 and b2 >= 184) or   -- start of CJK Unified Ideographs
+                   (b1 >= 229 and b1 <= 233) or   -- middle blocks
+                   (b1 == 234 and b2 <= 159) then -- end boundary
+                    chineseChars = chineseChars + 1
+                end
+            end
+            i = i + 3
+        elseif (b1 >= 65 and b1 <= 90) or (b1 >= 97 and b1 <= 122) then
+            -- ASCII Latin letters A-Z / a-z
+            latinChars = latinChars + 1
+            i = i + 1
+        elseif b1 >= 192 and b1 <= 223 then
+            -- 2-byte sequence (not used for CJK); skip
+            i = i + 2
+        elseif b1 >= 240 then
+            -- 4-byte sequence; skip
+            i = i + 4
+        else
+            -- ASCII punctuation/digits/whitespace or continuation bytes; ignore for detection
+            i = i + 1
         end
     end
-    
-    local chineseRatio = chineseCount / totalChars
-    if chineseRatio > 0.3 then
+
+    -- Pure sets
+    if chineseChars > 0 and latinChars == 0 then return "zh" end
+    if latinChars > 0 and chineseChars == 0 then return "en" end
+
+    -- Mixed: choose whichever dominates
+    if chineseChars >= latinChars and chineseChars > 0 then
         return "zh"
-    else
-        return "en" -- Default to English for non-Chinese text
+    elseif latinChars > 0 then
+        return "en"
     end
+
+    -- No signal characters; default to English (neutral)
+    return "en"
 end
 
 -- Enhanced language detection for translate command with higher threshold
@@ -536,7 +569,8 @@ SlashCmdList["CET"] = function(msg)
         local channelType = args[2]
         if channelType then
             channelType = string.upper(channelType)
-            if CETVars.channelSettings[channelType] then
+            -- Check for key existence (nil) rather than truthiness, so disabled (false) channels are recognized
+            if CETVars.channelSettings[channelType] ~= nil then
                 local enabled = CETVars.ToggleChannel(channelType)
                 CET.Print(channelType .. " channel " .. (enabled and "enabled" or "disabled"))
                 CET.RegisterChatEvents() -- Re-register events
