@@ -2,21 +2,15 @@
 
 A unified World of Warcraft 1.12.1 addon that provides real-time translation of chat messages using Google Translate API with bidirectional DLL communication.
 
-# Slop alert
-
-This slop alert entry is pretty much the only thing I've 100% written in this entire solution. This project has relied heavily on help from AI as I am not as good a developer as I would like to be.
-I'm really not even sure if the stuff in this readme or the project overview is in any way accurate - it might be a lot of bluster and hallucination. Or just best intentions that never actually got implemented.
-
-The upload was limited to what was needed to make the thing run and I also provided the dll source.
-Besides adding the addon files to CET directory in your addons folder, and the CET.dll to your root WoW folder, you probably also need to update your dlls.txt file adding CET.dll, aand you might also need to tag the dll in turtle wow launcher. You also need to create a Google Translate API key in order to make translations work.
-
-If this doesn't work for you sorry - I hope to improve it, but I usually don't have a lot of free time. Feel free to fork it and make it better. 
-I added some additional AI slop which aims to help with deploying the addon and also setting up the translate API key.
-These 2 sections (Google Cloud Translation API Setup & Deployment Guide) should be all you need to actually use the solution.
-
-Onwards with the rest of the README slop.
-
 ## Overview
+
+This upload was limited to what was needed to make the thing run and I also provided the source for DLL compilation.
+Besides adding the addon files to CET directory in your addons folder, and the CET.dll to your root WoW folder, you probably also need to update your dlls.txt file adding CET.dll, and you might also need to tag the dll in turtle wow launcher if using standard launcher.
+You also need to create a Google Translate API key in order to make translations work.
+
+I hope to improve this as I test it, but I usually don't have a lot of free time. Feel free to fork it and make it better or provide me feedback on your experience with it.
+I added some additional sections in the readme which aim to help with deploying the addon and also setting up the translate API key.
+These 2 sections (Google Cloud Translation API Setup & Deployment Guide) should be all you need to actually use the solution.
 
 CET combines three key components into a single, production-ready solution:
 - **Chat Event Monitoring**: Configurable tracking of WoW chat channels
@@ -384,6 +378,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
