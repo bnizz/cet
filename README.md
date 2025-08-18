@@ -194,98 +194,6 @@ If LEGUI only shows Japanese options:
 2. Copy existing profile section and modify for Chinese
 3. Generate new GUID using PowerShell: `[Guid]::NewGuid()`
 
-## Installation
-This section is more aimed at compilation from source. You can use the deployment and google api sections if you just want to use the solution.
-
-### Prerequisites
-1. World of Warcraft 1.12.1 (Vanilla Classic)
-2. Google Translate API key ([Get one here](https://cloud.google.com/translate/docs/setup))
-3. UnitXP or compatible addon framework
-
-### Installation Steps
-
-1. **Build the DLL**:
-   ```powershell
-   cd cet/dll
-   mkdir build
-   cd build
-   cmake ..
-   cmake --build . --config Release
-   ```
-
-2. **Install the DLL**:
-   - Copy `build/bin/Release/CET.dll` to your WoW directory
-   - Ensure the DLL is loaded by your addon framework
-
-3. **Install the Addon**:
-   - Copy the entire `cet/addon/` folder to `Interface/AddOns/CET/`
-   - Restart World of Warcraft
-
-## Configuration
-
-### Initial Setup
-
-1. **Set API Key** (Required):
-   ```
-   /cet apikey YOUR_GOOGLE_TRANSLATE_API_KEY
-   ```
-
-2. **Configure Translation Direction**:
-   ```
-   /cet direction zh en    # Chinese to English
-   /cet direction ja en    # Japanese to English
-   ```
-
-3. **Enable Chat Channels**:
-   ```
-   /cet toggle say         # Enable Say channel
-   /cet toggle guild       # Enable Guild channel
-   ```
-
-### Available Commands
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `/cet status` | Show current configuration | |
-| `/cet toggle <channel>` | Enable/disable channel | `/cet toggle party` |
-| `/cet direction <from> <to>` | Set translation direction | `/cet direction zh en` |
-| `/cet apikey <key>` | Set Google Translate API key | `/cet apikey YOUR_KEY` |
-| `/cet test` | Test DLL communication | |
-| `/cet debug` | Toggle debug mode | |
-| `/cet reset` | Reset to default settings | |
-| `/cetui` | Show/hide configuration UI | |
-
-### Supported Languages
-
-Common language codes:
-- `zh` - Chinese (Simplified)
-- `zh-tw` - Chinese (Traditional)
-- `en` - English
-- `ja` - Japanese
-- `ko` - Korean
-- `es` - Spanish
-- `fr` - French
-- `de` - German
-- `ru` - Russian
-
-## Usage
-
-1. **Configure your preferred channels and translation direction**
-2. **Set your Google Translate API key**
-3. **Enable desired chat channels**
-4. **Translation will happen automatically for incoming messages**
-
-When a message is received in an enabled channel:
-- Original message appears normally in chat
-- Translated message appears with `[T]` prefix
-- Original text shown in gray (configurable)
-
-Example output:
-```
-[PlayerName] 你好世界
-[T] Hello world (Original: 你好世界)
-```
-
 ## Architecture
 
 ### Project Structure
@@ -411,6 +319,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
