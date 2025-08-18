@@ -17,23 +17,6 @@ CET combines three key components into a single, production-ready solution:
 - **Real-time Translation**: Google Translate API integration via DLL
 - **Bidirectional Communication**: Secure addon ↔ DLL communication using UnitXP interface
 
-## Features
-
-### Core Functionality
-- ✅ Monitor multiple chat channels (Say, Whisper, Party, Raid, Guild, Yell, Channels)
-- ✅ Real-time translation with caching for performance
-- ✅ Configurable translation directions (e.g., Chinese → English)
-- ✅ In-game GUI for easy configuration
-- ✅ Comprehensive slash command interface
-- ✅ Debug mode with detailed logging
-
-### Technical Features
-- ✅ Single consolidated DLL (no multiple DLL management)
-- ✅ Memory-safe communication via UnitXP hook
-- ✅ Translation result caching (1-hour expiration)
-- ✅ Robust error handling and logging
-- ✅ SavedVariables for persistent configuration
-
 ## 🌐 Google Cloud Translation API Setup
 
 ### 💰 Pricing & Quotas Information
@@ -160,9 +143,59 @@ TurtleWoW/
 
 > ⚠️ **Important**: Always backup your game files before installing any modifications.
 
+## Turtle WoW Chinese & Russian Font Guide
+
+### Overview
+A guide for viewing, copying, and pasting Chinese and Russian characters in Turtle WoW.
+
+### Font Installation
+
+#### Download Required Font
+- Download the font pack from the provided Google Drive link
+- Extract fonts to `..\\Turtle WoW\\Fonts` (create new Fonts folder if needed)
+
+#### pfUI Users Additional Steps
+- Copy font to `..\\Turtle WoW\\Interface\\AddOns\\pfUI\\fonts`
+- Update pfUI font settings in the addon configuration
+
+### Locale Emulator Setup
+
+#### Installation
+- Download Locale Emulator from GitHub (v2.5.0.1)
+- Run `LEInstaller.exe` to install
+- Launch `LEGUI.exe`
+
+#### Chinese Profile Configuration
+- Create a new Chinese profile with these settings:
+  - Location: China (People's Republic of)
+  - Language: Chinese (Simplified)
+  - Code Page: 936 (ANSI/OEM Simplified Chinese GBK)
+  - Time Zone: (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi
+
+#### Running WoW with Chinese Support
+- Right-click on `WoW.exe` or `WoWFoV.exe`
+- Select: Locale Emulator → Chinese
+
+### Optional Tools
+
+#### Shortcut Creation
+- Use [LEShortcutCreator](https://github.com/Svintooo/LEShortcutCreator) to create desktop shortcuts
+- Eliminates need to right-click every time
+
+#### Text Copying Addons
+- **ShaguCopy**: Dedicated text copying addon
+- **pfUI**: Built-in text copying functionality
+
+### Troubleshooting
+
+#### LEGUI Profile Issues
+If LEGUI only shows Japanese options:
+1. Manually edit `LEConfig.xml` file
+2. Copy existing profile section and modify for Chinese
+3. Generate new GUID using PowerShell: `[Guid]::NewGuid()`
 
 ## Installation
-This section is more aimed at compilation from source. You can use the deployment section if you just want to use the solution.
+This section is more aimed at compilation from source. You can use the deployment and google api sections if you just want to use the solution.
 
 ### Prerequisites
 1. World of Warcraft 1.12.1 (Vanilla Classic)
@@ -378,6 +411,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
