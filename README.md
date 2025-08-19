@@ -158,7 +158,11 @@ A guide for viewing, copying, and pasting Chinese and Russian characters in Turt
 - Copy font to `..\\Turtle WoW\\Interface\\AddOns\\pfUI\\fonts`
 - Update pfUI font settings in the addon configuration
 
+- To update pfUI, open config and enable the ARIALN font for UI elements which are showing blank characters
+- Settings -> General -> Standard Text Font is the main setting I think
+
 ### Locale Emulator Setup
+This section is only if you wish to copy / paste Chinese characters yourself
 
 #### Installation
 - Download Locale Emulator from GitHub (v2.5.0.1)
@@ -170,7 +174,6 @@ A guide for viewing, copying, and pasting Chinese and Russian characters in Turt
   - Location: China (People's Republic of)
   - Language: Chinese (Simplified)
   - Code Page: 936 (ANSI/OEM Simplified Chinese GBK)
-  - Time Zone: (UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi
 
 #### Running WoW with Chinese Support
 - Right-click on `WoW.exe` or `WoWFoV.exe`
@@ -319,6 +322,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
