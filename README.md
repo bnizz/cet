@@ -144,6 +144,8 @@ TurtleWoW/
 > ⚠️ **Important**: Always backup your game files before installing any modifications.
 
 ## Turtle WoW Chinese & Russian Font Guide
+Info primarily sourced from https://forum.turtle-wow.org/viewtopic.php?t=8326
+Content there also has some screenshots
 
 ### Overview
 A guide for viewing, copying, and pasting Chinese and Russian characters in Turtle WoW.
@@ -322,6 +324,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
