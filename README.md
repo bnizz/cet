@@ -151,7 +151,7 @@ A guide for viewing, copying, and pasting Chinese and Russian characters in Turt
 ### Font Installation
 
 #### Download Required Font
-- Download the font pack from [here](https://github.com/bnizz/cet/blob/57523ccbfa42916e47827397e5720d1210a96bf0/ARIALN.ttf)
+- Download the font pack from [here](https://raw.githubusercontent.com/bnizz/cet/main/ARIALN.ttf)
 - Extract fonts to `..\\Turtle WoW\\Fonts` (create new Fonts folder if needed)
 
 #### pfUI Users Additional Steps
@@ -319,6 +319,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
