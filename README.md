@@ -37,7 +37,16 @@ Before setting up the Google Cloud Translation API, please review the pricing an
    - **Create a new project**: Click **"Create Project"**
    - **Use existing project**: Select an existing project if that makes more sense for your use case
 
-#### Step 2: Generate API Credentials
+#### Step 2: Turn on Cloud Translation API
+
+   1. visit https://console.cloud.google.com/
+   2. Open left side menu
+   3. Click apis & services
+   4. Click + enable apis and services
+   5. Search for translate
+   6. Click on cloud translation api -> turn it on
+
+#### Step 3: Generate API Credentials
 
 1. **Navigate to APIs & Services**:
    - Click the navigation menu (hamburger icon) in the top left corner
@@ -324,6 +333,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
