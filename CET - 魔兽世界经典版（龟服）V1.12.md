@@ -85,7 +85,7 @@ CET将三个关键组件合并为一个生产就绪的解决方案：
 
 2. **文件结构**：
 ```
-📁 TurtleWoW/
+📁 GameDirectory/
 ├── 📁 Interface/
 │   └── 📁 AddOns/
 │       └── 📁 CET/ ← 将此文件夹复制到这里
@@ -93,11 +93,11 @@ CET将三个关键组件合并为一个生产就绪的解决方案：
 ```
 
 3. **复制文件**：
-   - 将`CET`文件夹复制到您的`TurtleWoW/Interface/AddOns/`目录
-   - 将`CET.dll`文件复制到您的主`TurtleWoW/`目录
+   - 将`CET`文件夹复制到您的`GameDirectory/Interface/AddOns/`目录
+   - 将`CET.dll`文件复制到您的主`GameDirectory/`目录
 
 4. **更新dlls.txt**：
-   - 在TurtleWoW目录中打开`dlls.txt`文件
+   - 在GameDirectory目录中打开`dlls.txt`文件
    - 添加以下行：`CET.dll`
    - 保存文件
 
@@ -125,7 +125,7 @@ CET将三个关键组件合并为一个生产就绪的解决方案：
 
 安装成功后，您的目录结构应该如下所示：
 ```
-TurtleWoW/
+GameDirectory/
 ├── CET.dll
 ├── dlls.txt (包含"CET.dll")
 └── Interface/
@@ -146,8 +146,8 @@ TurtleWoW/
 ### 字体安装步骤
 
 - 从[这里](https://raw.githubusercontent.com/bnizz/cet/main/ARIALN.ttf)下载字体包
-- 将字体解压到`..\\Turtle WoW\\Fonts`（如需要请创建新的Fonts文件夹）
-- 将字体复制到`..\\Turtle WoW\\Interface\\AddOns\\pfUI\\fonts`
+- 将字体解压到`..\\GameDirectory\\Fonts`（如需要请创建新的Fonts文件夹）
+- 将字体复制到`..\\GameDirectory\\Interface\\AddOns\\pfUI\\fonts`
 - 在插件配置中更新pfUI字体设置
 - 要更新pfUI，打开配置并为显示空白字符的UI元素启用ARIALN字体
 - 设置 -> 通用 -> 标准文本字体是我认为的主要设置
@@ -313,4 +313,5 @@ cmake --build . --config Release
 - UnitXP_SP3提供通信模式
 - Google翻译API提供翻译服务
 - MinHook库提供安全函数挂钩
+
 - WoW模组社区提供文档和支持
