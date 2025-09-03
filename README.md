@@ -153,7 +153,7 @@ Game Folder/
 > ⚠️ **Important**: Always backup your game files before installing any modifications.
 
 ## WoW V1.12.1 Chinese & Russian Font Guide
-Info primarily sourced from https://forum.turtle-wow.org/viewtopic.php?t=8326
+Info primarily sourced from https://tinyurl.com/cxdx3dbw
 Content there also has some screenshots
 
 ### Overview
@@ -333,6 +333,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
