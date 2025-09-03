@@ -98,7 +98,7 @@ To avoid unexpected charges:
 
 #### 3. Install Addon
 ```
-📁 TurtleWoW/
+📁 gamedir/
 ├── 📁 Interface/
 │   └── 📁 AddOns/
 │       └── 📁 CET/          ← Copy this folder here
@@ -106,24 +106,24 @@ To avoid unexpected charges:
 ```
 
 **Steps:**
-- Copy the `CET` folder into your `TurtleWoW/Interface/AddOns/` directory
-- Copy the `CET.dll` file into your main `TurtleWoW/` directory
+- Copy the `CET` folder into your `gamedir/Interface/AddOns/` directory
+- Copy the `CET.dll` file into your main `gamedir/` directory
 
 #### 4. Configure DLL Loading
-- Open `dlls.txt` file in your TurtleWoW directory
+- Open `dlls.txt` file in your game directory
 - Add the following line: `CET.dll`
 - Save the file
 
 #### 5. Enable in Launcher (Optional)
 Some users may need to:
-- Open the Turtle WoW launcher
+- Open the launcher
 - Navigate to the **MODS** tab
 - Enable the CET DLL
 - Click **Apply**
 
 ### ✅ Verification
 
-After installation, launch Turtle WoW and verify that:
+After installation, launch WoW and verify that:
 - The game starts without errors
 - CET functionality is available in-game
 - No DLL loading errors appear
@@ -139,7 +139,7 @@ After installation, launch Turtle WoW and verify that:
 ### 📂 File Structure
 After successful installation, your directory should look like:
 ```
-TurtleWoW/
+Game Folder/
 ├── CET.dll
 ├── dlls.txt (containing "CET.dll")
 └── Interface/
@@ -152,7 +152,7 @@ TurtleWoW/
 
 > ⚠️ **Important**: Always backup your game files before installing any modifications.
 
-## Turtle WoW Chinese & Russian Font Guide
+## WoW V1.12.1 Chinese & Russian Font Guide
 Info primarily sourced from https://forum.turtle-wow.org/viewtopic.php?t=8326
 Content there also has some screenshots
 
@@ -163,10 +163,10 @@ A guide for viewing, copying, and pasting Chinese and Russian characters in Turt
 
 #### Download Required Font
 - Download the font pack from [here](https://raw.githubusercontent.com/bnizz/cet/main/ARIALN.ttf)
-- Extract fonts to `..\\Turtle WoW\\Fonts` (create new Fonts folder if needed)
+- Extract fonts to `..\\Game Folder\\Fonts` (create new Fonts folder if needed)
 
 #### pfUI Users Additional Steps
-- Copy font to `..\\Turtle WoW\\Interface\\AddOns\\pfUI\\fonts`
+- Copy font to `..\\Game Folder\\Interface\\AddOns\\pfUI\\fonts`
 - Update pfUI font settings in the addon configuration
 
 - To update pfUI, open config and enable the ARIALN font for UI elements which are showing blank characters
@@ -333,6 +333,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
