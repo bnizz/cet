@@ -5,7 +5,7 @@ A unified World of Warcraft 1.12.1 addon that provides real-time translation of 
 ## Overview
 
 This upload was limited to what was needed to make the thing run and I also provided the source for DLL compilation.
-Besides adding the addon files to CET directory in your addons folder, and the CET.dll to your root WoW folder, you probably also need to update your dlls.txt file adding CET.dll, and you might also need to tag the dll in turtle wow launcher if using standard launcher.
+Besides adding the addon files to CET directory in your addons folder, and the CET.dll to your root WoW folder, you probably also need to update your dlls.txt file adding CET.dll, and you might also need to tag the dll in launcher if using standard launcher.
 You also need to create a Google Translate API key in order to make translations work.
 
 I hope to improve this as I test it, but I usually don't have a lot of free time. Feel free to fork it and make it better or provide me feedback on your experience with it.
@@ -333,6 +333,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
