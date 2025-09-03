@@ -138,7 +138,7 @@ GameDirectory/
 
 ## 字体安装
 
-信息主要来源：[https://forum.turtle-wow.org/viewtopic.php?t=8326](https://forum.turtle-wow.org/viewtopic.php?t=8326)
+信息主要来源：https://tinyurl.com/cxdx3dbw
 该内容还包含一些截图
 
 在龟服中查看、复制和粘贴中文和俄文字符的指南。
@@ -315,3 +315,4 @@ cmake --build . --config Release
 - MinHook库提供安全函数挂钩
 
 - WoW模组社区提供文档和支持
+
