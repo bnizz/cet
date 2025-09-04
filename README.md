@@ -83,7 +83,7 @@ To avoid unexpected charges:
 ## 🐢 Deployment Guide
 
 ### Prerequisites
-- Turtle WoW client installed and working
+- WoW client installed and working
 - Administrative access to modify game files
 
 ### 📥 Deployment Steps
@@ -157,7 +157,7 @@ Info primarily sourced from https://tinyurl.com/cxdx3dbw
 Content there also has some screenshots
 
 ### Overview
-A guide for viewing, copying, and pasting Chinese and Russian characters in Turtle WoW.
+A guide for viewing, copying, and pasting Chinese and Russian characters in WoW.
 
 ### Font Installation
 
@@ -333,6 +333,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
