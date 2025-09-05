@@ -89,7 +89,7 @@ To avoid unexpected charges:
 ### 📥 Deployment Steps
 
 #### 1. Download the Release
-- Navigate to the [releases page](https://github.com/bnizz/cet/releases/tag/alpha)
+- Navigate to the [releases page](https://github.com/bnizz/cet/releases/)
 - Download the latest ZIP file from the releases section
 
 #### 2. Extract Files
@@ -333,6 +333,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
