@@ -28,6 +28,8 @@ Before setting up the Google Cloud Translation API, please review the pricing an
 
 > ⚠️ **Important**: You may be prompted to setup payment information during this process. If you're concerned about being billed beyond the free tier, implementing usage quotas is strongly advised.
 
+This is a repo designed to automate Google Cloud billing cost control and might be worth looking at to avoid unexpected Google Cloud bills for any project: https://github.com/Cyclenerd/poweroff-google-cloud-cap-billing
+
 ### 🚀 Setup Instructions
 
 #### Step 1: Create or Select a Project
@@ -333,6 +335,7 @@ For issues, questions, or feature requests:
 - Google Translate API for translation services
 - MinHook library for safe function hooking
 - WoW modding community for documentation and support
+
 
 
 
